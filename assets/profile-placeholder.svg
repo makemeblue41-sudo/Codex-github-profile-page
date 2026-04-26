@@ -1,0 +1,19 @@
+<svg width="640" height="760" viewBox="0 0 640 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="560" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8E9D4"/>
+      <stop offset="1" stop-color="#E7F2EF"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="180" y1="210" x2="460" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D86C4F"/>
+      <stop offset="1" stop-color="#0F6B6C"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="760" rx="42" fill="url(#bg)"/>
+  <circle cx="320" cy="292" r="132" fill="url(#ring)" opacity="0.2"/>
+  <circle cx="320" cy="292" r="100" fill="#FFF8EE"/>
+  <path d="M320 402C247 402 188 463 188 536V560H452V536C452 463 393 402 320 402Z" fill="#0F6B6C" opacity="0.2"/>
+  <path d="M320 390C269 390 228 349 228 298C228 247 269 206 320 206C371 206 412 247 412 298C412 349 371 390 320 390Z" fill="#0F6B6C" opacity="0.28"/>
+  <rect x="90" y="612" width="460" height="74" rx="18" fill="#FFFFFF" fill-opacity="0.78"/>
+  <text x="320" y="658" text-anchor="middle" fill="#3D4D55" font-size="32" font-family="Manrope, Noto Sans KR, sans-serif" font-weight="700">Profile Image Placeholder</text>
+</svg>
