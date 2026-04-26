@@ -7,7 +7,11 @@
   --muted: #54646b;
   --primary: #0f6b6c;
   --primary-strong: #0a4a4a;
-  --accent: #d86c4f;
+  --accent: #cf2f3a;
+  --accent-red: #cf2f3a;
+  --accent-red-strong: #a81e2f;
+  --accent-red-soft: #ffe7ea;
+  --accent-red-glow: rgba(207, 47, 58, 0.24);
   --border: #d7cfbf;
   --shadow-soft: 0 20px 45px -35px rgba(24, 38, 45, 0.45);
   --shadow-card: 0 18px 30px -26px rgba(21, 35, 44, 0.48);
@@ -35,9 +39,9 @@ body {
   font-family: var(--font-body);
   line-height: 1.6;
   background:
-    radial-gradient(circle at 8% 12%, rgba(216, 108, 79, 0.24), transparent 40%),
+    radial-gradient(circle at 8% 12%, var(--accent-red-glow), transparent 40%),
     radial-gradient(circle at 90% 8%, rgba(15, 107, 108, 0.22), transparent 44%),
-    linear-gradient(180deg, #f8f5ee 0%, #f2ece1 100%);
+    linear-gradient(180deg, #fbf6f3 0%, #f2ece1 100%);
 }
 
 a {
@@ -94,6 +98,13 @@ img {
   font-weight: 800;
   letter-spacing: 0.01em;
   text-decoration: none;
+  color: var(--text);
+  transition: color 160ms ease;
+}
+
+.brand:hover,
+.brand:focus-visible {
+  color: var(--accent-red-strong);
 }
 
 .nav-list {
@@ -114,7 +125,7 @@ img {
 
 .nav-list a:hover,
 .nav-list a:focus-visible {
-  color: var(--primary-strong);
+  color: var(--accent-red-strong);
 }
 
 .menu-toggle {
@@ -156,9 +167,9 @@ img {
 }
 
 .section-alt {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.56), rgba(255, 255, 255, 0.22));
-  border-top: 1px solid rgba(210, 202, 188, 0.7);
-  border-bottom: 1px solid rgba(210, 202, 188, 0.7);
+  background: linear-gradient(180deg, rgba(255, 242, 244, 0.6), rgba(255, 255, 255, 0.22));
+  border-top: 1px solid rgba(214, 182, 185, 0.72);
+  border-bottom: 1px solid rgba(214, 182, 185, 0.72);
 }
 
 .hero {
@@ -178,7 +189,7 @@ img {
 
 .eyebrow {
   margin: 0;
-  color: var(--primary);
+  color: var(--accent-red);
   font-family: var(--font-display);
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -232,24 +243,25 @@ h1 {
 }
 
 .button-primary {
-  background: var(--primary);
+  background: linear-gradient(120deg, var(--primary), var(--accent-red));
+  box-shadow: 0 14px 24px -16px rgba(168, 30, 47, 0.9);
   color: #fff;
 }
 
 .button-primary:hover,
 .button-primary:focus-visible {
-  background: var(--primary-strong);
+  background: linear-gradient(120deg, var(--primary-strong), var(--accent-red-strong));
 }
 
 .button-ghost {
   background: var(--surface-strong);
-  color: var(--primary-strong);
-  border-color: rgba(15, 107, 108, 0.36);
+  color: var(--accent-red-strong);
+  border-color: rgba(207, 47, 58, 0.38);
 }
 
 .button-ghost:hover,
 .button-ghost:focus-visible {
-  background: rgba(15, 107, 108, 0.09);
+  background: rgba(207, 47, 58, 0.1);
 }
 
 .language-switch {
@@ -261,10 +273,10 @@ h1 {
 }
 
 .language-button {
-  border: 1px solid rgba(15, 107, 108, 0.35);
+  border: 1px solid rgba(207, 47, 58, 0.42);
   border-radius: 999px;
   background: var(--surface-strong);
-  color: var(--primary-strong);
+  color: var(--accent-red-strong);
   min-width: 3.2rem;
   min-height: 2.1rem;
   font-weight: 800;
@@ -273,7 +285,7 @@ h1 {
 
 .profile-card {
   margin: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(252, 245, 234, 0.9));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.93), rgba(255, 239, 241, 0.92));
   border-radius: var(--radius-lg);
   border: 1px solid rgba(197, 187, 170, 0.65);
   box-shadow: var(--shadow-soft);
@@ -299,7 +311,7 @@ h1 {
 
 .kicker {
   margin: 0 0 0.25rem;
-  color: var(--primary);
+  color: var(--accent-red);
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 0.8rem;
@@ -346,6 +358,12 @@ h2 {
   border-radius: var(--radius-md);
   padding: 0.95rem 1rem;
   box-shadow: var(--shadow-card);
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.stat-list div:hover {
+  border-color: rgba(207, 47, 58, 0.42);
+  transform: translateY(-2px);
 }
 
 .stat-list dt {
@@ -374,6 +392,12 @@ h2 {
   padding: 1rem;
   box-shadow: var(--shadow-card);
   animation: rise-in 0.5s ease both;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.skill-card:hover {
+  border-color: rgba(207, 47, 58, 0.44);
+  transform: translateY(-2px);
 }
 
 .skill-card h3 {
@@ -403,6 +427,12 @@ h2 {
   padding: 1rem;
   box-shadow: var(--shadow-card);
   animation: rise-in 0.5s ease both;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.project-card:hover {
+  border-color: rgba(207, 47, 58, 0.44);
+  transform: translateY(-2px);
 }
 
 .project-header {
@@ -417,9 +447,10 @@ h2 {
 }
 
 .project-period {
-  border: 1px solid rgba(15, 107, 108, 0.34);
+  border: 1px solid rgba(207, 47, 58, 0.38);
   border-radius: 999px;
-  color: var(--primary-strong);
+  color: var(--accent-red-strong);
+  background: var(--accent-red-soft);
   padding: 0.2rem 0.58rem;
   font-size: 0.78rem;
   font-weight: 700;
@@ -466,24 +497,24 @@ h2 {
 }
 
 .button-link.primary {
-  background: var(--primary);
+  background: linear-gradient(120deg, var(--accent-red), var(--accent-red-strong));
   color: #fff;
 }
 
 .button-link.primary:hover,
 .button-link.primary:focus-visible {
-  background: var(--primary-strong);
+  background: #8f1324;
 }
 
 .button-link.secondary {
-  border: 1px solid rgba(15, 107, 108, 0.35);
-  color: var(--primary-strong);
+  border: 1px solid rgba(207, 47, 58, 0.36);
+  color: var(--accent-red-strong);
   background: var(--surface-strong);
 }
 
 .button-link.secondary:hover,
 .button-link.secondary:focus-visible {
-  background: rgba(15, 107, 108, 0.09);
+  background: rgba(207, 47, 58, 0.1);
 }
 
 .contact-list {
@@ -504,6 +535,12 @@ h2 {
   display: grid;
   gap: 0.38rem;
   animation: rise-in 0.5s ease both;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.contact-list li:hover {
+  border-color: rgba(207, 47, 58, 0.44);
+  transform: translateY(-2px);
 }
 
 .contact-label {
@@ -515,7 +552,7 @@ h2 {
 }
 
 .contact-list a {
-  color: var(--primary-strong);
+  color: var(--accent-red-strong);
   font-weight: 700;
 }
 
