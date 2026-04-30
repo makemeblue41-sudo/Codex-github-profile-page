@@ -7,11 +7,15 @@
   --muted: #54646b;
   --primary: #0f6b6c;
   --primary-strong: #0a4a4a;
-  --accent: #cf2f3a;
+  --accent: #6e3bb8;
   --accent-red: #cf2f3a;
   --accent-red-strong: #a81e2f;
   --accent-red-soft: #ffe7ea;
   --accent-red-glow: rgba(207, 47, 58, 0.24);
+  --accent-purple: #6e3bb8;
+  --accent-purple-strong: #532c8c;
+  --accent-purple-soft: #f1e8ff;
+  --accent-purple-glow: rgba(110, 59, 184, 0.2);
   --border: #d7cfbf;
   --shadow-soft: 0 20px 45px -35px rgba(24, 38, 45, 0.45);
   --shadow-card: 0 18px 30px -26px rgba(21, 35, 44, 0.48);
@@ -40,6 +44,7 @@ body {
   line-height: 1.6;
   background:
     radial-gradient(circle at 8% 12%, var(--accent-red-glow), transparent 40%),
+    radial-gradient(circle at 84% 86%, var(--accent-purple-glow), transparent 46%),
     radial-gradient(circle at 90% 8%, rgba(15, 107, 108, 0.22), transparent 44%),
     linear-gradient(180deg, #fbf6f3 0%, #f2ece1 100%);
 }
@@ -104,7 +109,7 @@ img {
 
 .brand:hover,
 .brand:focus-visible {
-  color: var(--accent-red-strong);
+  color: var(--accent-purple-strong);
 }
 
 .nav-list {
@@ -125,7 +130,7 @@ img {
 
 .nav-list a:hover,
 .nav-list a:focus-visible {
-  color: var(--accent-red-strong);
+  color: var(--accent-purple-strong);
 }
 
 .menu-toggle {
@@ -167,9 +172,9 @@ img {
 }
 
 .section-alt {
-  background: linear-gradient(180deg, rgba(255, 242, 244, 0.6), rgba(255, 255, 255, 0.22));
-  border-top: 1px solid rgba(214, 182, 185, 0.72);
-  border-bottom: 1px solid rgba(214, 182, 185, 0.72);
+  background: linear-gradient(180deg, rgba(247, 238, 255, 0.58), rgba(255, 255, 255, 0.22));
+  border-top: 1px solid rgba(199, 180, 226, 0.72);
+  border-bottom: 1px solid rgba(199, 180, 226, 0.72);
 }
 
 .hero {
@@ -243,25 +248,25 @@ h1 {
 }
 
 .button-primary {
-  background: linear-gradient(120deg, var(--primary), var(--accent-red));
+  background: linear-gradient(120deg, var(--primary) 0%, var(--accent-red) 52%, var(--accent-purple) 100%);
   box-shadow: 0 14px 24px -16px rgba(168, 30, 47, 0.9);
   color: #fff;
 }
 
 .button-primary:hover,
 .button-primary:focus-visible {
-  background: linear-gradient(120deg, var(--primary-strong), var(--accent-red-strong));
+  background: linear-gradient(120deg, var(--primary-strong) 0%, var(--accent-red-strong) 45%, var(--accent-purple-strong) 100%);
 }
 
 .button-ghost {
   background: var(--surface-strong);
-  color: var(--accent-red-strong);
-  border-color: rgba(207, 47, 58, 0.38);
+  color: var(--accent-purple-strong);
+  border-color: rgba(110, 59, 184, 0.42);
 }
 
 .button-ghost:hover,
 .button-ghost:focus-visible {
-  background: rgba(207, 47, 58, 0.1);
+  background: rgba(110, 59, 184, 0.11);
 }
 
 .language-switch {
@@ -273,10 +278,10 @@ h1 {
 }
 
 .language-button {
-  border: 1px solid rgba(207, 47, 58, 0.42);
+  border: 1px solid rgba(110, 59, 184, 0.44);
   border-radius: 999px;
   background: var(--surface-strong);
-  color: var(--accent-red-strong);
+  color: var(--accent-purple-strong);
   min-width: 3.2rem;
   min-height: 2.1rem;
   font-weight: 800;
@@ -285,7 +290,7 @@ h1 {
 
 .profile-card {
   margin: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.93), rgba(255, 239, 241, 0.92));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.93), rgba(243, 236, 255, 0.92));
   border-radius: var(--radius-lg);
   border: 1px solid rgba(197, 187, 170, 0.65);
   box-shadow: var(--shadow-soft);
@@ -311,7 +316,7 @@ h1 {
 
 .kicker {
   margin: 0 0 0.25rem;
-  color: var(--accent-red);
+  color: var(--accent-purple);
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 0.8rem;
@@ -362,7 +367,7 @@ h2 {
 }
 
 .stat-list div:hover {
-  border-color: rgba(207, 47, 58, 0.42);
+  border-color: rgba(110, 59, 184, 0.44);
   transform: translateY(-2px);
 }
 
@@ -396,7 +401,7 @@ h2 {
 }
 
 .skill-card:hover {
-  border-color: rgba(207, 47, 58, 0.44);
+  border-color: rgba(110, 59, 184, 0.44);
   transform: translateY(-2px);
 }
 
@@ -431,7 +436,7 @@ h2 {
 }
 
 .project-card:hover {
-  border-color: rgba(207, 47, 58, 0.44);
+  border-color: rgba(110, 59, 184, 0.44);
   transform: translateY(-2px);
 }
 
@@ -447,10 +452,10 @@ h2 {
 }
 
 .project-period {
-  border: 1px solid rgba(207, 47, 58, 0.38);
+  border: 1px solid rgba(110, 59, 184, 0.42);
   border-radius: 999px;
-  color: var(--accent-red-strong);
-  background: var(--accent-red-soft);
+  color: var(--accent-purple-strong);
+  background: var(--accent-purple-soft);
   padding: 0.2rem 0.58rem;
   font-size: 0.78rem;
   font-weight: 700;
@@ -497,24 +502,24 @@ h2 {
 }
 
 .button-link.primary {
-  background: linear-gradient(120deg, var(--accent-red), var(--accent-red-strong));
+  background: linear-gradient(120deg, var(--accent-red) 0%, var(--accent-purple-strong) 100%);
   color: #fff;
 }
 
 .button-link.primary:hover,
 .button-link.primary:focus-visible {
-  background: #8f1324;
+  background: linear-gradient(120deg, #8f1324 0%, #482676 100%);
 }
 
 .button-link.secondary {
-  border: 1px solid rgba(207, 47, 58, 0.36);
-  color: var(--accent-red-strong);
+  border: 1px solid rgba(110, 59, 184, 0.4);
+  color: var(--accent-purple-strong);
   background: var(--surface-strong);
 }
 
 .button-link.secondary:hover,
 .button-link.secondary:focus-visible {
-  background: rgba(207, 47, 58, 0.1);
+  background: rgba(110, 59, 184, 0.11);
 }
 
 .contact-list {
@@ -539,7 +544,7 @@ h2 {
 }
 
 .contact-list li:hover {
-  border-color: rgba(207, 47, 58, 0.44);
+  border-color: rgba(110, 59, 184, 0.44);
   transform: translateY(-2px);
 }
 
@@ -552,7 +557,7 @@ h2 {
 }
 
 .contact-list a {
-  color: var(--accent-red-strong);
+  color: var(--accent-purple-strong);
   font-weight: 700;
 }
 
